@@ -16,7 +16,7 @@ public class CustomerOrderWSClient {
 		
 		GetOrdersRequest request = new GetOrdersRequest();
 		request.setCustomerId(BigInteger.valueOf(1));
-		
+		GetOrdersResponse response = customerOrderWsImplPort.getOrders(request);
 	}
 
 }
