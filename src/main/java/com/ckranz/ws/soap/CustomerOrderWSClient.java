@@ -20,6 +20,7 @@ public class CustomerOrderWSClient {
 		request.setCustomerId(BigInteger.valueOf(1));
 		GetOrdersResponse response = customerOrderWsImplPort.getOrders(request);
 		List<Order> orders = response.getOrder();
+		System.out.println("Anzahl der Bestellungen für den Kunden: " + orders.size());
 	}
 
 }
