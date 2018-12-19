@@ -3,10 +3,12 @@ package com.ckranz.ws.soap;
 import java.math.BigInteger;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
 
 import com.bharath.ws.trainings.CustomerOrdersPortType;
 import com.bharath.ws.trainings.GetOrdersRequest;
 import com.bharath.ws.trainings.GetOrdersResponse;
+import com.bharath.ws.trainings.Order;
 
 public class CustomerOrderWSClient {
 
@@ -17,6 +19,7 @@ public class CustomerOrderWSClient {
 		GetOrdersRequest request = new GetOrdersRequest();
 		request.setCustomerId(BigInteger.valueOf(1));
 		GetOrdersResponse response = customerOrderWsImplPort.getOrders(request);
+		List<Order> orders = response.getOrder();
 	}
 
 }
